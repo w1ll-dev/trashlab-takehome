@@ -1,0 +1,17 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      root: ""
+      glob: "*.{js,ts,jsx,tsx}"
+      run: npm run lint
+    tsc:
+      root: ""
+      glob: "*.{js,ts,jsx,tsx}"
+      run: npm run tsc
+commit-msg:
+  parallel: true
+  commands:
+    commitlint:
+      root: ""
+      run: npx commitlint --edit
