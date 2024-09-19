@@ -1,8 +1,10 @@
 import theme from "@/styles/theme";
 import { ThemeProvider } from "@shopify/restyle";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 type AppProviderProps = {
   children: React.ReactNode;
@@ -10,6 +12,8 @@ type AppProviderProps = {
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
+
+const queryClient = new QueryClient();
 
 export function AppProvider({ children }: AppProviderProps) {
   const [loaded] = useFonts({
@@ -26,5 +30,13 @@ export function AppProvider({ children }: AppProviderProps) {
     return null;
   }
 
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider theme={theme}>
+      <SafeAreaProvider>
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
+      </SafeAreaProvider>
+    </ThemeProvider>
+  );
 }
