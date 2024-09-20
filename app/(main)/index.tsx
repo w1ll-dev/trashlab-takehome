@@ -1,17 +1,17 @@
 import { getUsers } from "@/api/methods";
 import { QueryKeys } from "@/api/utils";
+import { UserTile } from "@/components/home";
 import {
   ScreenContainer,
   Spacer,
   ThemedText,
   ThemedView,
-  UserTile,
-} from "@/components";
+} from "@/components/shared";
 import { useQuery } from "@tanstack/react-query";
 import { ActivityIndicator, FlatList, ListRenderItemInfo } from "react-native";
 
 const renderItem = ({ item }: ListRenderItemInfo<User>) => (
-  <UserTile {...item} />
+  <UserTile {...item} onPress={() => console.log(item.userID)} />
 );
 
 const renderHeader = ({ item }: ListRenderItemInfo<User>) => (

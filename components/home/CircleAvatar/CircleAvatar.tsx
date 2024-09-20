@@ -1,7 +1,7 @@
 import { Image } from "expo-image";
 import { blurhash, CIRCLE_AVATAR_SIZE } from "./utis";
-import { ThemedView } from "../ThemedView";
 import { StyleSheet } from "react-native";
+import { ThemedView } from "@/components/shared";
 
 type CircleAvatarProps = {
   avatarURL?: string;

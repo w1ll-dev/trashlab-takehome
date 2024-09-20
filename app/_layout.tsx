@@ -1,12 +1,12 @@
-import { AppProvider } from "@/components/AppProvider";
+import { AppProvider } from "@/components/shared";
 import { Stack } from "expo-router";
-import "react-native-reanimated";
+import React from "react";
 
-export default function RootLayout() {
+export default function MainStackLayout() {
   return (
     <AppProvider>
       <Stack>
-        <Stack.Screen name="(mainStack)" options={{ headerShown: false }} />
+        <Stack.Screen name="(main)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </AppProvider>
