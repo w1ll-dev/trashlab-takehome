@@ -19,10 +19,10 @@ const queryClient = new QueryClient();
 export function AppProvider({ children }: AppProviderProps) {
   const [loaded] = useFonts({
     [FontName["Manrope-Regular"]]: require(
-      `../assets/fonts/files/Manrope-Regular.ttf`,
+      `../../assets/fonts/files/Manrope-Regular.ttf`,
     ),
     [FontName["Manrope-Bold"]]: require(
-      `../assets/fonts/files/Manrope-Bold.ttf`,
+      `../../assets/fonts/files/Manrope-Bold.ttf`,
     ),
   });
 
