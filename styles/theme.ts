@@ -1,3 +1,4 @@
+import { FontName } from "@/assets/fonts/fontName";
 import { createTheme } from "@shopify/restyle";
 
 const palette = {
@@ -25,16 +26,33 @@ const theme = createTheme({
     xl: 40,
   },
   textVariants: {
-    header: {
-      fontWeight: "bold",
-      fontSize: 34,
+    h1: {
+      fontFamily: FontName["Manrope-Bold"],
+      fontSize: 48,
     },
-    body: {
+    h2: {
+      fontFamily: FontName["Manrope-Regular"],
+      fontSize: 44,
+    },
+    h3: {
+      fontFamily: FontName["Manrope-Bold"],
+      fontSize: 32,
+    },
+    h4: {
+      fontFamily: FontName["Manrope-Regular"],
       fontSize: 16,
-      lineHeight: 24,
+    },
+    p1: {
+      fontFamily: FontName["Manrope-Regular"],
+      fontSize: 16,
+    },
+    p2: {
+      fontFamily: FontName["Manrope-Regular"],
+      fontSize: 12,
     },
     defaults: {
-      // We can define a default text variant here.
+      fontFamily: FontName["Manrope-Regular"],
+      fontSize: 12,
     },
   },
 });
