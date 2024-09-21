@@ -15,7 +15,10 @@
     "bulk:users": "node ./scripts/bulkUsers.js"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "testMatch": [
+      "**/__tests__/**/*test.ts"
+    ]
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
