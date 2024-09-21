@@ -1,18 +1,24 @@
 import { Image } from "expo-image";
-import { blurhash, CIRCLE_AVATAR_SIZE } from "./utis";
+import {
+  blurhash,
+  CIRCLE_AVATAR_SIZE,
+  circleAvatarPossibleSizes,
+  CircleAvatarSize,
+} from "./utis";
 import { StyleSheet } from "react-native";
 import { ThemedView } from "@/components/shared";
 
 type CircleAvatarProps = {
   avatarURL?: string;
+  size?: CircleAvatarSize;
 };
 
-export function CircleAvatar({ avatarURL }: CircleAvatarProps) {
+export function CircleAvatar({ avatarURL, size = "small" }: CircleAvatarProps) {
   return (
     <ThemedView
-      borderRadius={CIRCLE_AVATAR_SIZE}
-      height={CIRCLE_AVATAR_SIZE}
-      width={CIRCLE_AVATAR_SIZE}
+      borderRadius={circleAvatarPossibleSizes[size]}
+      height={circleAvatarPossibleSizes[size]}
+      width={circleAvatarPossibleSizes[size]}
     >
       <Image
         style={styles.image}

@@ -1,6 +1,6 @@
 import { getUsers } from "@/api/methods";
 import { QueryKeys } from "@/api/utils";
-import { UserTile } from "@/components/home";
+import { HomeHeaderWithQuery, UserTile } from "@/components/home";
 import {
   ScreenContainer,
   Spacer,
@@ -14,13 +14,14 @@ const renderItem = ({ item }: ListRenderItemInfo<User>) => (
   <UserTile {...item} onPress={() => console.log(item.userID)} />
 );
 
-const renderHeader = ({ item }: ListRenderItemInfo<User>) => (
-  <ThemedText variant="h3" marginHorizontal="m" marginBottom="l">
-    TrashLab
-  </ThemedText>
-);
-
 const renderItemSeparator = () => <Spacer vertical="l" />;
+
+const renderHomeHeader = () => (
+  <>
+    <HomeHeaderWithQuery />
+    <Spacer vertical="l" />
+  </>
+);
 
 const keyExtractor = (item: User) => `${item.name}-${item.profileURL}`;
 
@@ -54,7 +55,7 @@ export default function HomeScreen() {
           renderItem={renderItem}
           keyExtractor={keyExtractor}
           ItemSeparatorComponent={renderItemSeparator}
-          ListHeaderComponent={renderHeader}
+          ListHeaderComponent={renderHomeHeader}
         />
       </ThemedView>
     </ScreenContainer>

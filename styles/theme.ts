@@ -39,8 +39,8 @@ const theme = createTheme({
       fontSize: 32,
     },
     h4: {
-      fontFamily: FontName["Manrope-Regular"],
-      fontSize: 16,
+      fontFamily: FontName["Manrope-Bold"],
+      fontSize: 28,
     },
     p1: {
       fontFamily: FontName["Manrope-Regular"],

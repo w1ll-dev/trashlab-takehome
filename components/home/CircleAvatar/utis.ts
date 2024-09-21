@@ -3,4 +3,12 @@ const blurhash =
 
 const CIRCLE_AVATAR_SIZE = 60;
 
-export { blurhash, CIRCLE_AVATAR_SIZE };
+const circleAvatarPossibleSizes = {
+  small: 60,
+  medium: 70,
+};
+
+type CircleAvatarSize = keyof typeof circleAvatarPossibleSizes;
+
+export { blurhash, CIRCLE_AVATAR_SIZE, circleAvatarPossibleSizes };
+export type { CircleAvatarSize };
