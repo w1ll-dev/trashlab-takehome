@@ -7,13 +7,6 @@ export default function MainStackLayout() {
       screenOptions={{
         headerShown: false,
       }}
-    >
-      <Stack.Screen
-        name="index"
-        options={{
-          title: "Home",
-        }}
-      />
-    </Stack>
+    />
   );
 }

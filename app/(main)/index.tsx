@@ -1,5 +1,5 @@
 import { getUsers } from "@/api/methods";
-import { QueryKeys } from "@/api/utils";
+import { CURRENT_USER_ID, QueryKeys } from "@/api/utils";
 import { HomeHeaderWithQuery, UserTile } from "@/components/home";
 import {
   ScreenContainer,
@@ -7,12 +7,18 @@ import {
   ThemedText,
   ThemedView,
 } from "@/components/shared";
+import { getChatID } from "@/utils";
 import { useQuery } from "@tanstack/react-query";
+import { router } from "expo-router";
 import { ActivityIndicator, FlatList, ListRenderItemInfo } from "react-native";
 
-const renderItem = ({ item }: ListRenderItemInfo<User>) => (
-  <UserTile {...item} onPress={() => console.log(item.userID)} />
-);
+const renderItem = ({ item }: ListRenderItemInfo<User>) => {
+  const chatID = getChatID(CURRENT_USER_ID, item.userID);
+
+  return (
+    <UserTile {...item} onPress={() => router.navigate(`/(main)/${chatID}`)} />
+  );
+};
 
 const renderItemSeparator = () => <Spacer vertical="l" />;
 
