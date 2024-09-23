@@ -1,50 +1,70 @@
-# Welcome to your Expo app 👋
+# Take Home App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Demo
 
-## Get started
+🎥 [You can see an example video of its use here, remember to put the video in high resolution 😉.](https://youtube.com/shorts/wdliRieeD6s?feature=share)
 
-1. Install dependencies
+## Description
 
-   ```bash
-   npm install
-   ```
+<p align="center">🔐 📱 App for testing app creation skills using a real-time chat application.</p>
 
-2. Start the app
+<h4 align="center"> 
+	🚧  Take Home App 🚀 Building...  🚧
+</h4>
 
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### 📱 Running the app (Expo)
 
 ```bash
-npm run reset-project
+# clone from github repository
+$ cd trashlab-takehome
+
+# Install the dependencies
+$ npm i
+
+# Run the application on ios
+$ npm run ios
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 📱 Utility commands
 
-## Learn more
+```bash
+# We check lint and typescript before each commit using the following commands
 
-To learn more about developing your project with Expo, look at the following resources:
+# check typescript
+$ npm run tsc
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+# check lint
+$ npm run lint
 
-## Join the community
+# To check unit tests run
+$ npm run test
+```
 
-Join our community of developers creating universal apps.
+### 🛠 Techs
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The following tools were used in building the project:
+
+- [Expo](https://expo.io/)
+- [Node.js](https://nodejs.org/en/)
+- [React Native](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Commitzen](https://github.com/commitizen/cz-cli)
+- [Commitlint](https://github.com/conventional-changelog/commitlint)
+- [Lefthook](https://github.com/evilmartians/lefthook)
+- [Jest](https://jestjs.io/)
+- [React Testing Library](https://testing-library.com/docs/react-native-testing-library/intro)
+- [Restyle](https://github.com/Shopify/restyle)
+
+### Author
+
+---
+
+<a href="https://github.com/w1ll-dev">
+   <img style="border-radius: 50%; margin: 20px" src="https://github.com/w1ll-dev.png" width="100px;" alt=""/>
+   <br />
+   <p><b>🚀 Will Gomes</b></p>
+</a>
+
+Made with ❤️ by Will Gomes 👋🏽 Contact me!
+
+[![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/will-marcio/)

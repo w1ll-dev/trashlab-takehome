@@ -4,6 +4,7 @@ const blurhash =
 const CIRCLE_AVATAR_SIZE = 60;
 
 const circleAvatarPossibleSizes = {
+  mini: 30,
   small: 50,
   medium: 60,
 };
