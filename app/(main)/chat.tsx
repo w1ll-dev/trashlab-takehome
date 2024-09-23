@@ -1,5 +1,5 @@
 import { sendMessage } from "@/api/methods";
-import { CURRENT_USER_ID } from "@/api/utils";
+import { CURRENT_USER, CURRENT_USER_ID } from "@/api/utils";
 import {
   ChatHeader,
   ChatInput,
@@ -25,7 +25,7 @@ export default function ChatScreen() {
     mutationFn: (messageText: string) =>
       sendMessage({
         chatRoomID: chatID,
-        senderUser: user,
+        senderUser: CURRENT_USER,
         messageText,
       }),
   });
