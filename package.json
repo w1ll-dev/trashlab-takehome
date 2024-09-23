@@ -14,7 +14,8 @@
     "commit": "npx cz",
     "bulk:users": "node ./scripts/users/bulkUsers.js",
     "bulk:chatRooms": "node ./scripts/chatRooms/bulkChatRooms.js",
-    "bulk:mock": "npm run bulk:users; npm run bulk:chatRooms"
+    "bulk:mock": "npm run bulk:users; npm run bulk:chatRooms",
+    "setup:mock": "npm run bulk:mock"
   },
   "jest": {
     "preset": "jest-expo",
