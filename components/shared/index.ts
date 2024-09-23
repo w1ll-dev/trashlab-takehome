@@ -4,3 +4,5 @@ export * from "./Spacer";
 export * from "./ThemedText";
 export * from "./ThemedView";
 export * from "./ThemedTouchable";
+export * from "./ThemedTextInput";
+export * from "./KeyboardView";

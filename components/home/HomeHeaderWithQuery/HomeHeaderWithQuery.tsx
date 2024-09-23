@@ -17,7 +17,7 @@ function HomeHeaderWithQuery() {
       justifyContent="space-between"
       marginHorizontal="m"
     >
-      <ThemedText variant="h4" marginBottom="l">
+      <ThemedText variant="h1" marginBottom="l">
         {texts.trashLab}
       </ThemedText>
       <CircleAvatar avatarURL={data?.profileURL} size="medium" />
