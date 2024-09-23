@@ -1,3 +1,4 @@
+import { FontName } from "@/assets/fonts/fontName";
 import theme from "@/styles/theme";
 import { ThemeProvider } from "@shopify/restyle";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -17,13 +18,18 @@ const queryClient = new QueryClient();
 
 export function AppProvider({ children }: AppProviderProps) {
   const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    [FontName["Manrope-Regular"]]: require(
+      `../../assets/fonts/files/Manrope-Regular.ttf`,
+    ),
+    [FontName["Manrope-Bold"]]: require(
+      `../../assets/fonts/files/Manrope-Bold.ttf`,
+    ),
   });
 
   useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
+    if (loaded!) return;
+
+    SplashScreen.hideAsync();
   }, [loaded]);
 
   if (!loaded) {

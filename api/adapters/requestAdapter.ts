@@ -1,15 +1,23 @@
 import { FirebaseCollectionRef, FirebaseSnapshot } from "@/types/firebase";
-import { getDocs, query } from "firebase/firestore";
+import { getDocs, query, QueryConstraint } from "firebase/firestore";
+import { errorGettingData } from "../errors";
+import { firebaseLogger } from "@/scripts/utils";
 
-export const requestAdapter = async <T>(
+export const getDocsAdapter = async <T>(
   collectionRef: FirebaseCollectionRef,
   mapperMethod: (querySnapshot: FirebaseSnapshot) => T,
+  ...queryConstraints: QueryConstraint[]
 ): Promise<T> => {
-  const collectionQuery = query(collectionRef);
+  try {
+    const collectionQuery = query(collectionRef, ...queryConstraints);
 
-  const querySnapshot = await getDocs(collectionQuery);
+    const querySnapshot = await getDocs(collectionQuery);
 
-  const dataToReturn = mapperMethod(querySnapshot);
+    const dataToReturn = mapperMethod(querySnapshot);
 
-  return dataToReturn;
+    return dataToReturn;
+  } catch (error) {
+    firebaseLogger.error(error);
+    throw errorGettingData;
+  }
 };
