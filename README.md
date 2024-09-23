@@ -4,6 +4,12 @@
 
 🎥 [You can see an example video of its use here, remember to put the video in high resolution 😉.](https://youtube.com/shorts/wdliRieeD6s?feature=share)
 
+## Next project points
+- Implementing e2e tests using maestro or detox
+- Improving our tests coverage using react native testing library
+- Implementing git secrets
+- Adding send image feature
+
 ## Description
 
 <p align="center">🔐 📱 App for testing app creation skills using a real-time chat application.</p>
