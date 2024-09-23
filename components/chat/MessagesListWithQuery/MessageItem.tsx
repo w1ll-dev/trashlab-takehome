@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import { getMessageBorderRadius, MESSAGE_CONTAINER_MAX_WIDTH } from "./utils";
 import { Message } from "@/types/message";
 import { getMessageDate } from "@/utils";
+import { CircleAvatar } from "@/components/home";
 
 type MessageItemProps = Omit<Message, "senderName" | "userID"> & {
   isFromCurrentUser: boolean;
@@ -43,7 +44,8 @@ export function MessageItem({
     >
       <ThemedText variant="p2">{text}</ThemedText>
       <Spacer horizontal="s" />
-      <ThemedView alignSelf={messageAlign}>
+      <ThemedView alignSelf={messageAlign} alignItems={messageAlign}>
+        <CircleAvatar avatarURL={profileURL} size="mini" />
         <ThemedText variant="s" textAlign={"left"}>
           {messageTime}
         </ThemedText>
