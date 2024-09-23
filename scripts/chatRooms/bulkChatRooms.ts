@@ -1,6 +1,6 @@
-const { mockChatRooms } = require("./mockChatRooms");
-const { firebaseLogger } = require("../utils");
-const admin = require("firebase-admin");
+import { mockChatRooms } from "./mock";
+import { firebaseLogger } from "../utils";
+import admin from "firebase-admin";
 const serviceAccount = require("../../api/firebase/firebase-service-account-key.json"); // Update the path
 
 // Initialize Firebase Admin SDK
@@ -11,21 +11,16 @@ admin.initializeApp({
 // Get a Firestore instance
 const db = admin.firestore();
 
-/**
- * Upload JSON data to Firestore.
- * @param {string} collectionName - The name of the Firestore collection.
- * @param {object} jsonData - The JSON data to upload.
- */
-async function uploadChatRooms(collectionName, listData) {
+async function uploadChatRooms() {
   try {
-    for (const item of listData) {
+    for (const item of mockChatRooms) {
       const chatRoomID = item.chatRoomID;
 
       if (!chatRoomID) {
-        firebaseLogger.error("Item is missing userID:", item);
+        firebaseLogger.error(`Item is missing userID: ${item}`);
         continue; // Skip this item if userID is not present
       }
-      const chatRoomDocRef = db.collection(collectionName).doc(chatRoomID);
+      const chatRoomDocRef = db.collection("chatRooms").doc(chatRoomID);
       const chatRoomItem = {
         createdAt: admin.firestore.Timestamp.fromDate(new Date()),
         chatRoomID: chatRoomDocRef.id,
@@ -49,8 +44,8 @@ async function uploadChatRooms(collectionName, listData) {
       }
     }
   } catch (error) {
-    console.error("Error uploading document: ", error);
+    firebaseLogger.error(error);
   }
 }
 
-uploadChatRooms("chatRooms", mockChatRooms);
+uploadChatRooms();

@@ -16,7 +16,7 @@ export function MessageItem({
   isFromCurrentUser,
 }: MessageItemProps) {
   const messageAlign = useMemo(
-    () => (isFromCurrentUser ? "flex-start" : "flex-end"),
+    () => (isFromCurrentUser ? "flex-end" : "flex-start"),
     [isFromCurrentUser],
   );
 

@@ -50,4 +50,6 @@ const mockUsers = [
   },
 ];
 
-module.exports = { mockUsers };
+const CURRENT_USER = mockUsers[0];
+
+module.exports = { mockUsers, CURRENT_USER };
