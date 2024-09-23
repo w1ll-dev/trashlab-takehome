@@ -1,5 +1,5 @@
 type RootStackParamsList = {
   ChatScreen: {
-    chatID: string;
+    userToChat: User;
   };
 };
