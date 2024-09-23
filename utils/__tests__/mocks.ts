@@ -1,4 +1,4 @@
-const mockUserID = "MOCK_USER_ID";
-const mockUserToChatID = "MOCK_USER_ID";
+const mockUserID = "def";
+const mockUserToChatID = "abc";
 
 export { mockUserID, mockUserToChatID };
