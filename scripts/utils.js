@@ -3,7 +3,7 @@ const firebaseLogger = {
     console.log("🔥📈 FIREBASE:", message);
   },
   error: (message) => {
-    console.error("🔥📈 FIREBASE:", message);
+    console.error("🔥❌ FIREBASE:", message);
   },
 };
 
