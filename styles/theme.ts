@@ -4,20 +4,16 @@ import { createTheme } from "@shopify/restyle";
 const palette = {
   purpleLight: "#8C6FF7",
   purplePrimary: "#5A31F4",
-  purpleDark: "#3F22AB",
+  purpleDark: "#07091A",
 
-  greenLight: "#56DCBA",
-  greenPrimary: "#0ECD9D",
-  greenDark: "#0A906E",
-
-  black: "#0B0B0B",
   white: "#F0F2F3",
 };
 
 const theme = createTheme({
   colors: {
-    mainBackground: palette.white,
-    cardPrimaryBackground: palette.purplePrimary,
+    screenBackground: palette.purpleDark,
+    messageBackground: palette.purplePrimary,
+    textColor: palette.white,
   },
   spacing: {
     s: 8,
@@ -28,31 +24,43 @@ const theme = createTheme({
   textVariants: {
     h1: {
       fontFamily: FontName["Manrope-Bold"],
-      fontSize: 48,
+      fontSize: 32,
+      color: "textColor",
     },
     h2: {
       fontFamily: FontName["Manrope-Regular"],
-      fontSize: 44,
+      fontSize: 28,
+      color: "textColor",
     },
     h3: {
       fontFamily: FontName["Manrope-Bold"],
-      fontSize: 32,
+      fontSize: 24,
+      color: "textColor",
     },
     h4: {
       fontFamily: FontName["Manrope-Bold"],
-      fontSize: 28,
+      fontSize: 20,
+      color: "textColor",
     },
     p1: {
       fontFamily: FontName["Manrope-Regular"],
-      fontSize: 16,
+      fontSize: 20,
+      color: "textColor",
     },
     p2: {
       fontFamily: FontName["Manrope-Regular"],
+      fontSize: 16,
+      color: "textColor",
+    },
+    s: {
+      fontFamily: FontName["Manrope-Regular"],
       fontSize: 12,
+      color: "textColor",
     },
     defaults: {
       fontFamily: FontName["Manrope-Regular"],
       fontSize: 12,
+      color: "textColor",
     },
   },
 });
