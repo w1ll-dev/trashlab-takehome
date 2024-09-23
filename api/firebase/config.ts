@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { collection, getFirestore } from "firebase/firestore";
+import { collection, getFirestore, doc } from "firebase/firestore";
 import { env } from "../env";
 
 // Your web app's Firebase configuration
@@ -18,8 +18,21 @@ const app = initializeApp(firebaseConfig);
 
 const database = getFirestore(app);
 
-const chatRoomsRef = collection(database, "rooms");
+const chatRoomsRef = collection(database, "chatRooms");
 
 const usersRef = collection(database, "users");
 
-export { chatRoomsRef, usersRef };
+const getChatRoomDocByID = (chatRoomID: string) =>
+  doc(database, "chatRooms", chatRoomID);
+
+const getMessagesCollectionByChatRoomID = (chatRoomID: string) => {
+  const chatRoomDoc = getChatRoomDocByID(chatRoomID);
+  return collection(chatRoomDoc, "messages");
+};
+
+export {
+  chatRoomsRef,
+  usersRef,
+  getChatRoomDocByID,
+  getMessagesCollectionByChatRoomID,
+};
