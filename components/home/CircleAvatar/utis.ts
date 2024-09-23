@@ -4,8 +4,8 @@ const blurhash =
 const CIRCLE_AVATAR_SIZE = 60;
 
 const circleAvatarPossibleSizes = {
-  small: 60,
-  medium: 70,
+  small: 50,
+  medium: 60,
 };
 
 type CircleAvatarSize = keyof typeof circleAvatarPossibleSizes;
