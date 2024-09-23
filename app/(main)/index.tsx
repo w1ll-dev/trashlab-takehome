@@ -1,24 +1,23 @@
 import { getUsers } from "@/api/methods";
-import { CURRENT_USER_ID, QueryKeys } from "@/api/utils";
+import { QueryKeys } from "@/api/utils";
 import { HomeHeaderWithQuery, UserTile } from "@/components/home";
-import {
-  ScreenContainer,
-  Spacer,
-  ThemedText,
-  ThemedView,
-} from "@/components/shared";
-import { getChatID } from "@/utils";
+import { ScreenContainer, Spacer, ThemedView } from "@/components/shared";
+import { callErrorAlert } from "@/utils";
 import { useQuery } from "@tanstack/react-query";
 import { router } from "expo-router";
 import { ActivityIndicator, FlatList, ListRenderItemInfo } from "react-native";
 
-const renderItem = ({ item }: ListRenderItemInfo<User>) => {
-  const chatID = getChatID(CURRENT_USER_ID, item.userID);
-
-  return (
-    <UserTile {...item} onPress={() => router.navigate(`/(main)/${chatID}`)} />
-  );
-};
+const renderItem = ({ item }: ListRenderItemInfo<User>) => (
+  <UserTile
+    {...item}
+    onPress={() =>
+      router.push({
+        pathname: `/chat`,
+        params: item,
+      })
+    }
+  />
+);
 
 const renderItemSeparator = () => <Spacer vertical="l" />;
 
@@ -32,7 +31,7 @@ const renderHomeHeader = () => (
 const keyExtractor = (item: User) => `${item.name}-${item.profileURL}`;
 
 export default function HomeScreen() {
-  const { data, isLoading, error } = useQuery({
+  const { data, isLoading, error, refetch } = useQuery<User[], CustomError>({
     queryKey: [QueryKeys.getUsers],
     queryFn: getUsers,
   });
@@ -46,11 +45,7 @@ export default function HomeScreen() {
   }
 
   if (error) {
-    return (
-      <ThemedView flex={1} justifyContent="center" alignItems="center">
-        <ThemedText>{error.message}</ThemedText>
-      </ThemedView>
-    );
+    callErrorAlert(error, refetch);
   }
 
   return (
