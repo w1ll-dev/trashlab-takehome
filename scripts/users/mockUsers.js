@@ -15,7 +15,7 @@ const mockUsers = [
     name: "Negan",
     userID: "aOJz1CMCLBr2OyiUZxBa",
     profileURL:
-      "https://static.wikia.nocookie.net/twd/images/7/74/Negan_s10.jpg/revision/latest?cb=20190924221815&path-prefix=pt-br",
+      "https://upload.wikimedia.org/wikipedia/pt/4/4c/Jeffrey-Dean-Morgan-como-Negan.jpg?20201031052226",
   },
   {
     name: "Michonne",
