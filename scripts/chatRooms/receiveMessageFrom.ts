@@ -1,6 +1,6 @@
 import admin from "firebase-admin";
 import { getChatID } from "../../utils/chat";
-import { mockUsers, CURRENT_USER_ID } from "../users/mockUsers";
+import { mockUsers, CURRENT_USER } from "../users/mockUsers";
 import { firebaseLogger } from "../utils";
 import { mockMessage } from "./mock";
 const serviceAccount = require("../../api/firebase/firebase-service-account-key.json");
@@ -25,7 +25,7 @@ async function receiveMessageFromUser() {
     const senderUser = mockUsers.find(
       (user: any) => user.userID === senderUserID,
     );
-    const chatRoomId = getChatID(CURRENT_USER_ID, senderUserID);
+    const chatRoomId = getChatID(CURRENT_USER.userID, senderUserID);
     const chatRoomDocRef = db.collection("chatRooms").doc(chatRoomId);
     const newMessageDocRef = chatRoomDocRef.collection("messages").doc();
 

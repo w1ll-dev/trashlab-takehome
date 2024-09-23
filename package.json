@@ -12,11 +12,10 @@
     "tsc": "echo \"\\033[33mRunning typescript check\" && tsc",
     "lint": "echo \"\\033[33mRunning eslint check\" && expo lint",
     "commit": "npx cz",
-    "bulk:users": "node ./scripts/users/bulkUsers.js",
-    "bulk:chatRooms": "node ./scripts/chatRooms/bulkChatRooms.js",
+    "bulk:users": "ts-node ./scripts/users/bulkUsers.ts",
+    "bulk:chatRooms": "ts-node ./scripts/chatRooms/bulkChatRooms.ts",
     "receive:message:from": "ts-node ./scripts/chatRooms/receiveMessageFrom.ts",
-    "bulk:mock": "npm run bulk:users; npm run bulk:chatRooms",
-    "setup:mock": "npm run bulk:mock"
+    "setup:mock": "npm run bulk:users; npm run bulk:chatRooms"
   },
   "jest": {
     "preset": "jest-expo",
