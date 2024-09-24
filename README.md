@@ -39,7 +39,7 @@ $ npm run ios
 # to test receiving messages from other users you can run
 $ npm run receive:message:from [user id from mock list]
 
-example: To receive a message from Negan run:
+# example: To receive a message from Negan run:
 $ npm run receive:message:from aOJz1CMCLBr2OyiUZxBa 
 
 # check typescript
